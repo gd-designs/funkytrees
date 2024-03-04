@@ -1,1 +1,1 @@
-# funky-trees
+# funkytrees
