@@ -21,24 +21,16 @@ window.Webflow.push(() => {
   });
 
   swiper.on("activeIndexChange", () => {
-  let realIndex = swiper.realIndex;
-  slideNumber.textContent = realIndex + 1;
-  headings.forEach((heading, index) => {
-    heading.classList.remove("is-active");
-    // Reset opacity and translateY for all headings
-    gsap.set(heading, { opacity: 0, translateY: 20 });
+    let realIndex = swiper.realIndex;
+    slideNumber.textContent = realIndex + 1;
+    headings.forEach((heading) => heading.classList.remove("is-active"));
+    headings[realIndex].classList.add("is-active");
+
+    // Combine rotation and scaling in the transform property
+    const rotationDegree = 0 - 90 * realIndex; // Calculate rotation
+    const scaleValue = 1.55; // Maintain scale
+    carouselWheel.style.transform = `rotate(${rotationDegree}deg) scale(${scaleValue})`; // Apply combined transformations
   });
-  // Add 'is-active' class to current heading
-  headings[realIndex].classList.add("is-active");
-
-  // Animate the current heading
-  gsap.to(headings[realIndex], { opacity: 1, translateY: 0, duration: 0.5, ease: "power1.out" });
-
-  // Combine rotation and scaling in the transform property for carousel wheel
-  const rotationDegree = 0 - 90 * realIndex; // Calculate rotation
-  const scaleValue = 1.55; // Maintain scale
-  carouselWheel.style.transform = `rotate(${rotationDegree}deg) scale(${scaleValue})`; // Apply combined transformations
-});
 
 
   // Handle slide transition animations for next slide
