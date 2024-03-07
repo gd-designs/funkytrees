@@ -14,8 +14,8 @@ window.Webflow.push(() => {
       enabled: true, 
     },
     navigation: {
-      nextEl: '.scene-1-arrow-next',
-      prevEl: '.scene-1-arrow-prev',
+      nextEl: '#scene-1-arrow-next',
+      prevEl: '#scene-1-arrow-prev',
     },
   });
 
