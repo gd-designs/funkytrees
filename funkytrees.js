@@ -10,7 +10,13 @@ window.Webflow.push(() => {
     loop: false,
     speed: speed,
     mousewheel: true,
-    keyboard: { enabled: true },
+    keyboard: { 
+      enabled: true, 
+    },
+    navigation: {
+      nextEl: '.scene-1-arrow-next',
+      prevEl: '.scene-1-arrow-prev',
+    },
   });
 
   swiper.on("reachEnd", () => {
