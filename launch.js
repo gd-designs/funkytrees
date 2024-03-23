@@ -1,17 +1,4 @@
-import { gsap } from "gsap";
-
-/* The following plugin is a Club GSAP perk */
-import { ScrollSmoother } from "gsap/ScrollSmoother";
-
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
-// Initialize ScrollSmoother
-let smoother = ScrollSmoother.create({
-  wrapper: ".page", // Make sure this is the outermost container of your content
-  content: ".main", // This should be the direct child of the wrapper and the parent of all your scrollable content
-  smooth: 1, // Control the smoothness (1 is default, higher values make it smoother)
-  effects: true, // Enable or disable effects (scaling, rotation, etc.) during smooth scrolling
-});
+gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", (event) => {
   gsap.set(".tree-grown-slide-3", { autoAlpha: 0 });
